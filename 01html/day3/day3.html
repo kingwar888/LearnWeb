@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单</title>
+</head>
+<body>
+	<form method="get">
+		<h1>修改个人信息</h1>
+		<table border="1" cellpadding="5px" cellspacing="0">
+			<tr>
+				<td width="120">姓名：</td>
+				<td width="300">
+					<input type="text" name="name" value="mary"></td>
+				<td rowspan="7" valign="top" width="200">
+						<details>
+							<summary>各项<mark>技能</mark>指数</summary>
+							HTML: <meter min="0" max="100" value="100"></meter> <br>
+							CSS3: <meter min="0" max="100" value="80"></meter> <br>
+							AJAX: <meter min="0" max="100" value="50"></meter> <br>						
+							</details>
+					</td>
+			</tr>
+			<tr>
+				<td>性别：</td>
+				<td>
+					<input type="radio" name="rdogender" value="rdofemale" id="rdofemale" checked>
+					<label for="rdofemale">女士</label>
+					<input type="radio" name="rdogender" value="rdomale" id="rdomale">
+					<label for="rdomale">男士</label>
+					</td>
+
+				
+			</tr>
+			<tr>
+				<td>学历：</td>
+				<td>
+					<select name="seledu">
+						<option value="0">其他</option>
+						<option value="1">专科</option>
+						<option value="2">本科</option>
+						<option value="3">硕士及以上</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>意向工作城市：</td>
+				<td>
+					<select name="selcity" size="5" multiple>
+						<option value="0">北京</option>
+						<option value="1">上海</option>
+						<option value="2">南京</option>
+						<option value="3">深圳</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">个人描述：</td>
+				<td>
+					<textarea name="txtdec" cols="30" rows="5"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="checkbox" name="chkpubic" id="chkpubic">
+
+				<label for="chkpubic">不要公开我的个人信息</label></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button>保存</button>
+					<input type="reset" name="reset" value="重填">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+ <html>
+	<head>
+	<title>css第二课</title>
+	<mata charset="utf-8">	
+	<style>
+		/*上方矩形款属性设置*/
+		#comment{
+			width: 90%;
+			min-height: 100px;
+			border: 1px solid #ccc;
+			padding: 10px;
+		}
+		/*设置a标签元素中的样式*/
+		#pages a{
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			padding: 2px 5px 2px;
+		}
+		/*取消掉1的边框*/
+		#pages a.current{
+			border : 0;
+		}
+		/*鼠标hover事件改变数字颜色和背景颜色*/
+		#pages a:hover{
+			background-color: #0000FF;
+			color: #FFF;
+		}
+		/*设置comment里top下边框颜色*/
+		#comment div.top{
+			border-bottom: 1px solid #D0E4C2;
+		}
+		/*通过雪碧图位置偏移呈现五星*/
+		#comment div.top>div{
+			width: 76px;
+			height: 16px;
+			background-image: url(Images/iconlist_1.png);
+			background-repeat: no-repeat;
+			background-position: -108px -240px;
+		}
+		/*设置button的样式*/
+		#comment button{
+			width: 90px;
+			height: 40px;
+			font-size: 14px;
+			border: 1px solid #d5d5d5;
+			background-image: linear-gradient(to bottom,white,#efe8f0);
+			border-radius: 5px;
+			margin-right: 10px;
+		}
+		body{
+			font-size: 12px;
+		}
+		#comment p{color: #9c9a9c;}
+		#comment span{color:#666 ;}
+		#comment .btns{text-align: right;}
+		#pages {
+			text-align: right;
+			width: 90%;
+			padding: 0px 10px;
+			}
+		#pages .current{
+			color: #f60;
+			font-weight: 900;
+		}
+		#pages a{
+			text-decoration: none;
+			color: #005aa0;
+		}
+	</style>
+	</head>
+	<body >	
+	<div id="comment">
+		<div class="top">
+			<div class="star5"></div>
+		</div>
+		<p>
+			标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签：
+			<b>比洗衣粉好用</b>&nbsp;&nbsp;&nbsp;&nbsp;
+			<b>去污能力强</b>
+		</p>
+		<p>
+			心&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;得：
+			<span>买了好几次 挺好用得...</span>
+		</p>
+		<p>
+			购买日期： 
+			<span>2011-11-11 11:11:11</span>
+		</p>
+		<p class="btns">
+		<button class="a">有用（3）</button>
+		<button class="b">回复（3）</button>
+		</p>
+	</div>
+    <br/>
+	<div id= "pages">
+	<a class="current">1</a>
+	<a href="#">2</a>
+	<a href="#">3</a>
+	<a href="#">4</a>
+	<a href="#">5</a>
+	<a href="#">6</a>
+	</div>
+	</body>
+
+
+
+ </html>
