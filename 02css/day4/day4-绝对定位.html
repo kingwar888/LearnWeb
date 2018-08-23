@@ -1,0 +1,37 @@
+ <html>
+	<head>
+	<title>css定位</title>
+	<mata charset="utf-8">	
+	<style>
+		#box{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#box li{
+			float: left;
+			width: 100px;
+			height: 30px;
+			border: 1px solid #000;
+			margin-right: 10px;
+			cursor: pointer;
+			text-align: center;
+		}
+		#box li:hover{
+			/*相对定位 右下移动*/
+			position: relative;
+			left: 5px;
+			top: 5px;
+		}
+	</style>
+	</head>
+	<body>	
+		<ul id="box">
+			<li>测试1</li>
+			<li>测试2</li>
+			<li>测试3</li>
+			<li>测试4</li>
+		</ul>
+	</body>
+
+ </html>

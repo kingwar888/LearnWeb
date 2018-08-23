@@ -1,0 +1,44 @@
+ <html>
+	<head>
+	<title>css定位</title>
+	<mata charset="utf-8">	
+	<style>
+		#d1{
+			width: 400px;
+			height: 400px;
+			background-color: blue;
+			float: right;
+			
+			position: relative;
+		}
+		#d2{
+			width:200px ;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+		}
+		#d3{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			
+			/*绝对定位依赖于已定位的祖先元素*/
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+		}
+		
+	</style>
+	</head>
+	<body>	
+		<div id="d1">
+			<div id="d2">
+				<div id="d3">
+					</div>
+			</div>
+		</div>
+	</body>
+
+ </html>

@@ -55,14 +55,42 @@
 				text-align: left;
 				width: 620px;
 			}
-
-			
+			/*浮动练习*/
+			#discuss .mt a{
+				font-size: 15px;
+				text-decoration: none;
+				float: left;
+				width: 100px;
+				height: 30px;
+				color: #005AA0;
+				font-family: 微软雅黑;
+				text-align: center;
+			}
+			#discuss div.mt a.current{
+				/*北京颜色 左右上边框*/
+				background-color: #fff;
+				border: 1px solid #DCDCDC;
+				border-bottom: 0;
+				border-top: 2px solid #f00;
+				margin-top: -8px;
+				height: 38px;
+				line-height: 32px;
+			}
+			#discuss-content{
+				clear: both;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="discuss">
 			<!-- 页签:990*30 -->
-			<div class="mt"></div>
+			<div class="mt">
+			<a href="#">网友讨论圈</a>
+			<a href="#" class="current">晒单帖</a>
+			<a href="#">讨论帖</a>
+			<a href="#">问答帖</a>
+			<a href="#">圈子帖</a>
+			</div>
 			<!-- 内容 -->
 			<div id="discuss-content">
 				<!-- 表格：主体内容 -->
