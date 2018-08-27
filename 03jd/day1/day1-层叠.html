@@ -1,0 +1,38 @@
+ <html>
+	<head>
+	<title>css定位</title>
+	<meta charset="utf-8">	
+	<style>
+		#d1,#d2,#d3{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 200px;
+			left: 400px;
+		}
+		#d1{
+			background-color: red;
+			z-index: 50;
+		}
+		#d2{
+			background-color: green;
+			top: 220px;
+			left: 300px;
+			z-index: 100;
+		}
+		#d3{
+			background-color: blue;
+			top: 240px;
+			left: 440px;
+			z-index: 10;
+		}
+		
+	</style>
+	</head>
+	<body>	
+		<div id="d1"></div>
+		<div id="d2"></div>
+		<div id="d3"></div>
+	</body>
+
+ </html>
