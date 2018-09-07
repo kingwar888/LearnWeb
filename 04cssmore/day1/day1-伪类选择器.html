@@ -1,0 +1,65 @@
+ <!doctype html>
+ <html>
+	<head>
+		<!--这是注释-->
+		<title></title>
+		<meta charset="utf-8">	
+		<style>
+			/*1目标伪类 锚点激活*/
+			div:target{
+				font-weight: bold;
+				color: #f00;
+				background-color: yellow;
+			}
+			/*2元素状态伪类 enable disable checked*/
+			/*3结构伪类 通过元素结构关系来进行匹配*/
+				/*first last nth empty（匹配没有子元素的元素不能有文本）only-chlid*/
+			#tb tr{
+				border-collapse: collapse;
+			}
+			#tb tr td{
+				order: 1px solid #333;
+			}
+			#tb tr:nth-child(2) td:nth-child(3){
+				background-color: #FFFF00;
+			}
+			/*4否定选择器*/
+				/**/
+			#tb td:not(:first-child){
+				color: red;
+			}	
+		</style>
+	</head>
+		<table id="tb">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>a</td>
+				<td>b</td>
+				<td>c</td>
+				<td>d</td>
+			</tr>
+			<tr>
+				<td>e</td>
+				<td>f</td>
+				<td>g</td>
+				<td>h</td>
+			</tr>
+			
+		</table>
+		<a href="#NO1">第一章节</a>
+		<div style="height: 2000px;"></div>
+		<div id="NO1">第一章节：什么是css</div>
+		
+	</body>
+ </html> 
