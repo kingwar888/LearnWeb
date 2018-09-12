@@ -1,0 +1,23 @@
+ <!doctype html>
+ <html>
+	<head>
+		<style>
+			#d1{
+				width: 200px;
+				height: 200px;
+				background-color: black;
+				/*注意编写顺序*/
+				background-color: green\0;/*ie8 9 10*/
+				background-color: blue\9\0;/*ie9 10*/
+				+ background-color: pink;/*ie6 ie7*/
+				- background-color:red;/*ie6*/
+				
+			}
+		</style>
+		
+	</head>
+		<div id="d1">
+			
+		</div>
+	</body>
+ </html> 

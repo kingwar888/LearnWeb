@@ -1,0 +1,38 @@
+ <!doctype html>
+ <html>
+	<head>
+		<!--这是注释-->
+		<title></title>
+		<meta charset="utf-8">	
+		<style>
+			#d1,#d2{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			#d2{
+				background-color: yellow;
+			}
+			#d3{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				margin-top: 10px;
+			}
+			#d2:before{
+				content: "";
+				display: table;
+			}
+		</style>
+	</head>
+		<div id="d1"></div>
+		<div id="d2">
+			<!-- 第一个子元素位置处
+				内容为空
+				表格
+			 -->
+			<!-- <table></table> -->
+			<div id="d3"></div>
+		</div>
+	</body>
+ </html> 
