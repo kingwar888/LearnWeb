@@ -1,0 +1,38 @@
+ <!doctype html>
+ <html>
+	<head>
+		<style>
+			/*申明计数器*/
+			body{counter-reset: c1 c2}
+			/*设置计数器增量*/
+			h3{
+				counter-increment: c1;
+				/*新的h3出现后对c2计数器进行复位*/
+				counter-reset: c2 0;
+			}
+			/*使用计数器*/
+			h3:before{
+				content: counter(c1)"、";
+			}
+			h4{counter-increment: c2;}
+			h4:before{
+				content:counter(c1)"." counter(c2) ".";
+				margin-left: 15px;
+			}
+		</style>
+		
+	</head>
+		<h3>web基础知识</h3>
+		<h4> 基础1</h4>
+		<h4> 基础2</h4>
+		<h4> 基础3</h4>
+		<h3>html快速入门</h3>
+		<h4> 入门1</h4>
+		<h4> 入门2</h4>
+		<h4> 入门3</h4>
+		<h3>网页中的文本</h3>
+		<h4> 文本1</h4>
+		<h4> 文本2</h4>
+		<h4> 文本3</h4>
+	</body>
+ </html> 
