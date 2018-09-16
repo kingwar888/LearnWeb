@@ -1,0 +1,74 @@
+ <!doctype html>
+ <html>
+	<head>
+		<style>
+			#stage{
+				width: 800px;
+				height: 400px;
+				margin: 100px auto;
+				border: 1px solid #333333;
+				/*模拟人眼到平面距离*/
+				perspective: 1200px;
+				-webkit-perspective: 1200px;
+			}
+			#parent{
+				width: 800px;
+				height: 400px;
+				border: 1px solid #333333;
+				position: relative;
+				/*保留子元素3d位置*/
+				transform-style: preserve-3d;
+				-webkit-transform-style: preserve-3d;
+				/*向前倾斜 沿x轴旋转-20deg*/
+				transform: rotatex(-40deg)
+				rotateY(0deg);
+			}
+			#parent div{
+				width: 100px;
+				height: 100px;
+				background-color: #e4393c;
+				position: absolute;
+				left: 350px;
+				top: 150px;
+			}
+			#parent div:nth-child(1){
+				transform: translatez(200px);
+				background-color: yellow;
+			}
+			#parent div:nth-child(2){
+				transform: rotateY(60deg) translatez(200px);
+				background-color: blue;
+			}
+			#parent div:nth-child(3){
+				transform: rotateY(120deg) translatez(200px);
+				background-color: red;
+			}
+			#parent div:nth-child(4){
+				transform: rotateY(180deg) translatez(200px);
+				background-color: yellow;
+			}
+			#parent div:nth-child(5){
+				transform: rotateY(240deg) translatez(200px);
+				background-color: blue;
+			}
+			#parent div:nth-child(6){
+				transform: rotateY(300deg) translatez(200px);
+				background-color: red;
+			}
+			
+			
+		</style>
+		
+	</head>
+		<div id="stage">
+			<div id="parent">
+				<div id="s1">1</div>
+				<div id="s2">2</div>
+				<div id="s3">3</div>
+				<div id="s4">4</div>
+				<div id="s5">5</div>
+				<div id="s6">6</div>
+			</div>
+		</div>
+	</body>
+ </html> 
