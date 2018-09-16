@@ -1,0 +1,45 @@
+ <!doctype html>
+ <html>
+	<head>
+		<style>
+			#d1,#d2{
+				width:200px;
+				height:200px;
+				position:absolute;
+				left:400px;
+				top:200px;
+			}
+			#d1{
+				border:1px dotted #666;
+				background-color: pink;
+			}
+			#d2{
+				border:1px solid #333;
+				background:#666;
+				opacity:0.5;
+				/*向右下移动50px*/
+				/* transform:translate(50px,50px); */
+				/*缩放元素*/
+				/* transform: scale(0.5); */
+				/*旋转，顺时针旋转45deg*/
+				/* transform: rotate(30deg); */
+				/*先顺时针旋转45deg，再向右移动100px*/
+				/* transform: translate(100px) rotate(45deg); *//*需要写在一起 还会按照执行顺序*/
+				/*改变转换原点，再旋转*/
+				/* transform-origin: left top;
+				transform: rotate(45deg); */
+				/*y轴倾斜 45deg*/
+				/* transform: skew(45deg); */
+				/*x轴倾斜 30deg*/
+				transform: skewY(30deg);
+			
+				
+			}
+
+		</style>
+		
+	</head>
+		<div id="d1">参考元素</div>
+		<div id="d2">转换元素</div>
+	</body>
+ </html> 

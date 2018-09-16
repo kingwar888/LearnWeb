@@ -1,0 +1,36 @@
+ <!doctype html>
+ <html>
+	<head>
+		<style>
+			#parent{
+				width: 400px;
+				height: 400px;
+				border: 1px solid #333;
+				margin: 100px auto;
+				/*增加perspective属性*/
+				perspective: 1200px;
+				-webkit-perspective: 1200px;
+			}
+			#chlid{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+				margin: 100px auto;
+				/*3d旋转*/
+				transform: rotateX(45deg);
+				/*rotate3D（x，y，z，ndeg）
+				 xyz取值为1表示参与旋转
+				 xyz取值为0表示不参与
+				并发执行不同于
+				transform：rotatex（45deg）rotatey（45deg）rotatez（45deg）
+				上面的是有先后顺序
+				*/
+			}
+		</style>
+		
+	</head>
+		<div id="parent">
+			<div id="chlid">3d转换元素</div>
+		</div>
+	</body>
+ </html> 
