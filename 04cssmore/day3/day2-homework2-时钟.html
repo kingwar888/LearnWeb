@@ -1,0 +1,61 @@
+ <!doctype html>
+ <html>
+	<head>
+		<style>
+			#clock{
+				width: 400px;
+				height: 400px;
+				border: 10px solid #369;
+				border-radius: 50%;
+				position: relative;
+			}
+			#minute{
+				width: 10px;
+				height: 80px;
+				background-color: #E4393C;
+				position: absolute;
+				top: 120px;
+				left:190px;
+				/*动画*/
+				transform-origin: center bottom;
+				animation: srcoll 3600s linear;
+			}
+			#second{
+				width: 6px;
+				height: 120px;
+				background-color: #000000;
+				position: absolute;
+				top: 80px;
+				left: 192px;
+				/*动画*/
+				transform-origin: center bottom;
+				animation: srcoll 60s linear;
+			}
+			#circular{
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background-color: #0000FF;
+				position: absolute;
+				top: 185px;
+				left:185px
+			}
+			
+			@keyframes srcoll{
+				0%{
+					transform: rotate(0deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+		
+	</head>
+		<div id="clock">
+			<div id="minute"></div>
+			<div id="second"></div>
+			<div id="circular"></div>
+		</div>
+	</body>
+ </html> 

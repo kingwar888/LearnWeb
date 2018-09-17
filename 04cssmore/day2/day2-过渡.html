@@ -1,0 +1,46 @@
+ <!doctype html>
+ <html>
+	<head>
+		<style>
+			#d1{
+				width: 200px;
+				height: 200px;
+				border: 2px solid #333;
+				background-color: #E4393C;
+				margin: 100px auto;
+				/*此处申明过渡管去管回*/
+				/*增加过渡*/
+				/*指定属性 时长 速度时间速率 延迟*/
+				transition-property: background-color,border-radius;
+				transition-duration: 2s;
+				transition-timing-function: linear;
+				transition-delay: 1s;
+			}
+			#d1:hover{
+				background-color: #005aa0;
+				border-radius: 50%;
+				/*此处申明过渡管去不管回*/
+			}
+			#scroll{
+				width: 50px;
+				height: 50px;
+				background-color: #E4393C;
+				border: 2px solid #005AA0;
+				text-align: center;
+				line-height: 50px;
+				border-radius: 50%;
+				font-weight: bold;
+				font-size:24px ;
+				color: #FFFFff;
+				transition: transform 3s;
+			}
+			#scroll:hover{
+				transform: translate(500px) rotate(1080deg);
+			}
+		</style>
+		
+	</head>
+		<div id="scroll">多</div>
+		<div id="d1"></div>
+	</body>
+ </html> 
