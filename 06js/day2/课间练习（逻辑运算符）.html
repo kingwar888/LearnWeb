@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+		/*	var num = prompt("请输入一个字符：");
+			//1.判断是否为数字
+			var isNum = (num>="0") && (num<="9");
+			console.log("输入的字符是数字："+isNum);
+			//2.判断是否为字母
+			var isSmall = (num>="a") && (num<="z");
+			var isBig = (num>="A") && (num<="Z");
+			var isEng = isBig || isSmall;
+			console.log("输入的字符是字母："+isEng);
+			//3.判断是否为汉字
+			var isCHN = (num>="\u4e00") && (num<="\u9fa5");
+			console.log("输入的字符是汉字："+isCHN);
+			*/
+			
+			//判断是否为闰年
+			var year = prompt("请输入一个年份：")
+			var c1=(year%4==0);//能被4整除
+			var c2=(year%100!=0);
+			var c3=(year%400==0);
+			
+			var result=(c1&&c2)||c3;
+			console.log(year+"年是闰年吗？"+result);
+		</script>
+		
+
+	</body>
+
+</html>

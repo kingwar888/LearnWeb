@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			var num = 25;
+			var str = "你好";
+			var boo = true;
+			var und;
+			
+			var result = "";
+			
+			//1.num+str
+			result = num + str;
+			console.log("结果为"+result+"，类型为"+typeof(result));
+			//2.str+boo
+			result = str + boo;
+			console.log("结果为"+result+"，类型为"+typeof(result));
+			//3.str+und
+			result = str + und;
+			console.log("结果为"+result+"，类型为"+typeof(result));
+			
+			//任何一种数据类型的数据,在与string做+运算,都会转换成string,再连接
+			
+			//4.num+str
+			result = num + boo;
+			console.log("结果为"+result+"，类型为"+typeof(result));
+			//4.num+str 结果为NaN（not a number）,尝试转换成num,结果失败
+			result = num + und;
+			console.log("结果为"+result+"，类型为"+typeof(result));
+			
+			//4.boo+und 结果为NaN,类型为num
+			result = boo +und;
+			console.log("结果为"+result+"，类型为"+typeof(result));
+		</script>
+		
+
+	</body>
+
+</html>
