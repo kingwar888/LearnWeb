@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>体重指数（BMI）</title>
+		
+	</head>
+
+	<body>
+		<script>
+			/*
+				录入升高和体重
+				指数=体重kg/身高m的平方
+				指数》25则偏重
+				指数《20则偏瘦
+				指数在20和25中间则正好
+			*/
+		   var weight=prompt("请输入体重（kg）：");
+		   var height=prompt("请输入身高（m）");
+		   var result=weight/(height*height);
+		   //通过短路与操作打印输出
+		   result>25 && (document.write("老铁你偏重"));
+		   result<20 && (document.write("老铁你偏瘦"));
+		   (result>20&&result<25) && (document.write("身材正好"));
+		   
+		</script>
+		
+
+	</body>
+
+</html>
