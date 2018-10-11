@@ -9,21 +9,35 @@
 
 	<body>
 		<script>
+			//两数相加
 			function sum(a,b){
 				return a+b;
-				
 			}
-			var n1=prompt("请输入一个数字");
-			var n2=prompt("请再输入一个数字");
-			n1=Number(n1);
-			n2=Number(n2);
+// 			var n1=prompt("请输入一个数字");
+// 			var n2=prompt("请再输入一个数字");
+// 			n1=Number(n1);
+// 			n2=Number(n2);
 			function testSum(){
 				console.log(sum(n1,n2));
 			}
 				
-			
+			//比较三个数的大小
+			function max(a1,a2,a3){
+				//先将a1的值赋值给max
+				var max=a1;
+				//再拿a2的值和max进行比较,如果大于max则吧a2的值赋值给max
+				max=max>a2?max:a2;
+				//再拿a3的值和max进行比较,如果大于max则吧a3的值赋值给max
+				max=max>a3?max:a3;
+				return max;
+			}
+			function testmax(){
+				var result =max(12,34,888);
+				console.log("三个数字中最大值为："+result);
+			}
 		</script>
 			<button onclick="testSum()">两数相加</button>
+			<button onclick="testmax()">三个数最大值是</button>
 	</body>
 
 </html>

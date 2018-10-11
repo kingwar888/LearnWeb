@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			function getMoney(){
+			//定义输入数据 单价 数量 付款金额
+			var price,count,money;
+			//定义输出数据 商品总价 应找金额
+			var total,change;
+			//以弹框的方式为单价 数量 赋值
+			price = prompt("请输入商品单价：");
+			count = prompt("请输入购买数量：");
+			//计算商品总价并且打印输出 如果总额大于500则打八折
+			total = price*count;
+			if(total>=500){
+				total *= 0.8;
+				console.log("您消费大于500，享受八折优惠：")
+			}
+			console.log("商品总价："+total);
+			//为付款金额赋值
+			money = prompt("请输入付款金额：");
+			if(money>=total){
+				//计算应找金额并且打印输出
+				change = money-total;
+				console.log("应找金额："+change);
+			}else{
+				console.log("钱不够！！！");
+			}
+			
+			}
+		</script>
+			<button onclick="getMoney()">收款小程序</button>
+	</body>
+
+</html>
