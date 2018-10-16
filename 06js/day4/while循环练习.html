@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			function xunhuan(){
+				var i = 1;
+				var sum = 0;
+				while(i<=100){
+					console.log(i);
+					sum = sum+i;
+					console.log("加起来的和是："+sum);
+					i++;
+				}
+			}
+			function jishuhe(){
+				var i = 1;
+				var sum = 0;
+				while(i<=100){
+					sum = sum + i;
+					i=i+2;
+				}
+				console.log(sum);
+			}
+			function jishuhe2(){
+				var i = 1;
+				var sum = 0;
+				while(i<=100){
+					//判断i的奇偶性
+					if(i % 2 == 1){
+						sum+=i;
+					}
+					i++;
+				}
+				console.log(sum);
+			}
+		</script>
+		 <button type="button" onclick="xunhuan()">执行循环求和</button>
+		 <button onclick="jishuhe()">一到一百的基数和</button>
+		 <button onclick="jishuhe2()">一到一百的基数和</button>
+	</body>
+
+</html>

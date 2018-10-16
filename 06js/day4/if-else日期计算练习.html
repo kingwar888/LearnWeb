@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			function getTotalDay(){
+			var year = Number( prompt("请输入年份："));
+			var month =Number( prompt("请输入月份："));
+			var day = Number(prompt("请输入日期："));
+			//判断月份计算天数
+			if(month==1){
+				totalday=day;
+			}
+			else if(month==2){
+				totalday=31+day;
+			}
+			else if(month==3){
+				totalday=31+28+day;
+			}
+			else if(month==4){
+				totalday=31+28+31+day;
+			}
+			else if(month==5){
+				totalday=31+28+31+30+day;
+			}
+			else if(month==6){
+				totalday=31+28+31+30+31+day;
+			}
+			else if(month==7){
+				totalday=31+28+31+30+31+30+day;
+			}
+			else if(month==8){
+				totalday=31+28+31+30+31+30+31+day;
+			}
+			else if(month==9){
+				totalday=31+28+31+30+31+30+31+31+day;
+			}
+			else if(month==10){
+				totalday=31+28+31+30+31+30+31+31+30+day;
+			}
+			else if(month==11){
+				totalday=31+28+31+30+31+30+31+31+30+31+day;
+			}
+			else if(month==12){
+				totalday=31+28+31+30+31+30+31+31+30+31+30+day;
+			}
+			//闰年能被4整除且不能被100整除，或能被400整除。
+			if(month!=1 && month!=2){
+				if(year%4==0&&year%100!=0||year%400==0){
+					totalday+=1;
+					}
+			}
+			
+			console.log(year+"年"+month+"月"+day+"日是"+year+"年的第"+totalday+"天");
+			}
+		</script>
+				<button type="button" onclick="getTotalDay()">计算总天数</button>
+
+	</body>
+
+</html>
