@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			//1900年1月1日是星期一
+			function caldate(){
+				//输入年（year）月（month）日(day)
+				var year = prompt("请输入年份：");
+				var month = prompt("请输入月份：");
+				var day = prompt("请输入日子：");
+				var totalday = 0;
+				//从1900年到year-1年共有多少天
+				for(var i=1900;i<year;i++){
+					if(i%4==0&&i%100!=0||i%400==0){
+						totalday+=366;
+					}else{
+						totalday+=365;
+					}
+				}
+				//year年的1.1日 到month-1月共有多少天
+				for(var i=1;i<month;i++){
+					switch(i){
+						case 1:
+						case 3:
+						case 5:
+						case 7:
+						case 8:
+						case 10:
+							totalday+=31;
+							break;
+						case 4:
+						case 6:
+						case 9:
+						case 11:
+							totalday+=30;
+							break;
+						if(year%4==0&&year%100!=0||year%400==0){
+							totalday+=29;
+						}else{
+							totalday+=28;
+						}	
+							break;
+					}
+				}
+				//累加day
+				totalday+=day;
+				console.log(totalday);
+				//模7
+				var msg="";
+				var date=(totalday % 7);
+				console.log(date);
+				switch(date){
+					case 0:
+						msg="日";
+						break;
+					case 1:
+						msg="一";
+						break;
+					case 2:
+						msg="二";
+						break;
+					case 3:
+						msg="三";
+						break;
+					case 4:
+						msg="四";
+						break;
+					case 5:
+						msg="五";
+						break;
+					case 6:
+						msg="六";
+						break;
+				}
+				console.log("那天是星期"+date);
+			}
+		</script> 
+			<button onclick="caldate()">星期几计算器</button>
+	</body>
+
+</html>

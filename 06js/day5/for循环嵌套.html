@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			function print(){
+				console.log("*")
+			}
+			function print1(){
+				var result = "";
+				for(var i=1;i<=5;i++){
+					result+="*";
+				}
+				console.log(result);
+			}
+			function print2(){
+				for(var n=1;n<=5;n++){
+					var result = "";
+					for(var i=1;i<=5;i++){
+						result+="*";
+					}
+					console.log(result);
+				}
+			}
+			function print3(){
+				for(var n=1;n<=5;n++){
+					var result = "";
+					for(var i=1;i<=n;i++){
+						result+="*";
+					}
+					console.log(result);
+				}
+			}
+			function print99(){
+				//打印9行
+				for(var i=1;i<=9;i++){
+					//字符串累加
+					var msg="";
+					for(var j=1;j<=i;j++){
+						msg+=(j+"*"+i+"="+(j*i)+"\t");
+					}
+					console.log(msg);
+				}
+			}
+		</script> 
+			<button onclick="print()">打印*</button>
+			<button onclick="print1()">打印五个*</button>
+			<button onclick="print2()">打印五行五个*</button>
+			<button onclick="print3()">按列打印五行*</button>
+			<button onclick="print99()">打印99乘法表</button>
+			
+	</body>
+
+</html>

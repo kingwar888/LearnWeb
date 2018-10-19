@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			function chitao(){
+				//多少天后剩余一个桃子  定义总共的桃子
+				var i = prompt("猴子的桃子多少天之后只剩1个：")
+				var left=1;
+				var total;
+				//
+				while(i>1){
+					total=(left+1)*2;
+					left=total;
+					i--;
+				}
+				console.log("猴子第一天一共摘了"+total+"个桃子")
+			}
+		</script>
+			<button onclick="chitao()">猴子吃桃</button>
+	</body>
+
+</html>

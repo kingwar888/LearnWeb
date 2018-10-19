@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			function printNum(){
+				for(var i=1;i<=1000;i++){
+					 if(i % 2 == 1){
+						console.log(i)
+					}
+				}
+			}
+			function  sum(){
+				var sum=0;
+				for(var i=1;i<=1000;i++){
+					if(i % 2 == 0){
+						sum+=i;
+					}
+					
+				}
+				console.log("1-1000所有偶数和为："+sum);
+			}
+			
+		</script>
+			<button onclick="printNum()">打印1-1000之间所有的奇数</button>
+			<button onclick="sum()">打印1-1000所有偶数之和</button>
+	</body>
+
+</html>
