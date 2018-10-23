@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			var names=Array("宗秋磊","袁梦蕾","邵梦楠","徐晶晶","沈正宇","陈锦华");
+			//var names=["宗秋磊","袁梦蕾","邵梦楠","徐晶晶","沈正宇","陈锦华"];
+			console.dir(names);
+			names[5]="斐斐";//替换原来的
+			console.log(names[5]);
+			//获取一个不存在的数组
+			console.log(names[9]);
+			//在任意位置插一个元素
+			names[7]="陈帅元";
+			console.dir(names);
+			//快速获取倒数第一个元素
+			console.log(names[names.length-1]);
+			//快速获取倒数第四个元素
+			console.log(names[names.length-4]);
+			//快速在末尾追加新元素
+			names[names.length]="顾伟";
+			names[names.length]="章杰";
+			console.dir(names);
+			//删除倒数第一个元素
+			names.length--;
+			console.dir(names);
+			//删除最后两个元素
+			names.length-=2;
+			console.dir(names);
+		</script>
+			
+	</body>
+
+</html>

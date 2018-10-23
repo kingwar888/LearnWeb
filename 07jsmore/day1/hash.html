@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+			var cjh=[];//分两步创建关联数组
+			cjh["name"]="陈锦华";
+			cjh["html"]=90;
+			cjh["css"]=78;
+			cjh["js"]=86;
+			console.dir(cjh);
+			//使用数组里的元素
+			console.log(cjh["html"]);
+			cjh.html+=8;
+			console.log(cjh["html"]);
+			//遍历cjh数组
+			for(var key in cjh){
+				console.log(key+":"+cjh[key]);
+			}
+			
+		</script>
+			
+	</body>
+
+</html>
