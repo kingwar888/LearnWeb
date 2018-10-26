@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<select id="selProvs">
+			<!-- innerhtml -->
+		</select>
+		<script>
+			//定义一个省份的数组
+			var provs=["北京市","天津市","上海市","江苏省","浙江省"]
+			var before=String(provs);//原始数组拍照
+			//provs[provs]="山东省";//添加一个省份
+			//provs.length--;//减掉一个
+			var after=String(provs);//第二次拍照
+			//前后两次拍照进行对比
+			if(before!=after){
+				console.log("数组被修改过")
+			}else{console.log("数组未被修改")}
+			
+			var html="<option>"+provs.join("</option><option>")+"</option>";
+			selProvs.innerHTML=html;
+		</script>
+			
+	</body>
+
+</html>

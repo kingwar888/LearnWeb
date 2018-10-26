@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		
+		<script>
+			/*stack*/
+			var bus=[];
+	/*		for(var i=1;i<=5;i++){
+				var c="乘客"+i;
+				console.log(c+" 上车");
+				bus.unshift(c);//bus.push(c);
+				console.log(String(bus));
+			  }
+			  while(bus.length>0){ 
+				var c=bus.shift();//var c=bus.pop();
+				console.log(c+"下车");
+				console.log(String(bus));
+			 }
+			*/
+			/*queue*/
+			var shen7=5;
+			var queue=[];
+			for(var i=1;i<=5;i++){
+				queue.push("顾客"+i);
+			}
+			console.log(String(queue));
+			while(shen7>0){
+				var first=queue.shift()
+				shen7--;
+				console.log(first+ "购买成功！");
+				console.log(String(queue));
+			}
+		</script>
+			
+	</body>
+
+</html>

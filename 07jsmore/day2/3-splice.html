@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		
+		<script>
+	/*		//定义一个数组放图片
+			var imgs=["img1","img2","img3","img4","img5"]
+			//删除开头2个图片,再拼接到结尾
+			var deletes=imgs.splice(0,2);
+			imgs=imgs.concat(deletes);
+			console.log(String(imgs));
+			//删除结尾2个图片,再片接到开头
+			var deletes=imgs.splice(-2,2);
+			imgs=deletes.concat(imgs);
+			console.log(String(imgs));
+			*/
+			//插入,替换元素
+			var arr1=[1,2,3];
+			var arr2=[12,23];
+			console.dir(arr1);
+			arr1.splice(1,0,234,543);
+			console.log(arr1);//插入元素,之前位置的元素往后移
+			arr1.splice(1,2,0,0,0,0)//删除两个元素替换进来四个元素
+			console.log(arr1);
+			arr1.splice(2,0,arr2);//插入的数组住的是套间
+			console.log(arr1);
+		</script>
+			
+	</body>
+
+</html>
