@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<script>
+				var chars=[];
+				for(var u=48;u<=57;u++){
+					//将u转为正文压入chars
+					chars.push(String.fromCharCode(u));
+				} 
+				for(var u=65;u<=90;u++){
+					//将u转为正文压入chars
+					chars.push(String.fromCharCode(u));
+				} 
+				for(var u=97;u<=122;u++){
+					//将u转为正文压入chars
+					chars.push(String.fromCharCode(u));
+				}
+				function getCode(){
+				var code=[];
+				for(var i=0;i<4;i++){//i从0到<4
+					//在0-61之间随机生成一个数r
+					var r=Math.floor(Math.random()*62)
+					//将chars中r位置的字符压入code中
+					code.push(chars[r]);
+					
+				}//循环结束
+				//返回code无缝拼接的结果
+				return code.join("");
+				debugger;//f12打开 
+				}
+				var code=getCode();
+				//反复：输入验证码,转为小写后,如果不等于code转为小写的内容
+				var input;
+				while((prompt("请输入验证码"+code))
+				.toLocaleLowerCase()!=code.toLocaleLowerCase()){
+					//提示验证码输入错误
+					alert("验证码错误，请重新输入！")
+					//输入错误后重新生成code
+					code=getCode();
+				}
+				document.write("<h1>验证通过 </h1>")
+		</script>
+			
+	</body>
+
+</html>

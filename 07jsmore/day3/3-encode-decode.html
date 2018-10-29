@@ -1,0 +1,43 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			var msg="今晚306,w84u";
+			/*编码*/
+			function encode(){
+				//遍历msg中每一个字,同时申明空字符串code
+				var code="";
+				for(var i=0;i<msg.length;i++){
+					//讲msg中当前字符转为Unicode码,拼接到code上
+					var u=msg.charCodeAt(i);//msg[i].charAt()
+				/*	if(u<100) u="000"+u;
+					else if(u<1000) u="00"+u
+					code+=u;
+					*/
+					code+=(u+100000+"").slice(1);//加空字符串转化为字符
+				}
+				return code;
+			}
+			var code=encode(msg);
+			console.log(code);
+			/*解码*/
+			function decode(code){
+				//申明空字符串msg
+				var msg="";
+				//i从0开始,每隔5个字符遍历一次code
+				for(var i=0;i<code.length;i+=5){	
+					//获取code中i位置开始的五个字符,保存的到u
+					var u=code.substr(i,5);
+					//将u反向转为正文拼接到msg中
+					msg+=String.fromCharCode(u);
+				}//遍历结束
+					return msg;
+			}
+			console.log(msg);
+		</script>
+	</body>
+ </html>
