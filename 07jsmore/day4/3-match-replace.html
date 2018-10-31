@@ -1,0 +1,57 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			var str="No zuo no die No can no bibi";
+			var kws=str.match(/no/gi);
+			str=str.replace(/no/gi,"**");//替换无权修改原字符串.只能重新赋值给新值
+			console.log(String(str));
+			console.log(String(kws));
+			console.log("共替换"+(kws!=null?kws.length:0)+"处"),
+			
+			//var str="那天，我去他家，到了他家对他说：我草，你家真大。她说想和我去草地野餐，我草草收拾了草地。她说：我去去就来";
+			//敏感词:我去 我草 我去草 我草草 我去去
+			str=str.replace(
+			/我[去草]{1,2}/g,
+// 			function(kw){
+// 				return kw.length==2?"**":"***";
+// 			} 
+			kw=>kw.length==2?"**":"***"  //es6写法
+			)
+			console.log(str);
+			
+			//编写函数ltrim,删除字符串开头的空格
+			function ltrim(){
+				return str.replace(/^\s+/,"");
+			}
+			//编写函数rtrim,删除字符串结尾的空格
+			function rtrim(){
+				return str.replace(/\s+$/,"");
+			}
+			//编写函数trim,删除字符串开头和结尾的空格
+			function trim(){
+				return str.replace(/^\s+|\s+$/g,"");
+			}
+			var str="    chen   jin   hua   ";
+			console.log(ltrim(str));
+			console.log(rtrim(str));
+			console.log(trim(str));
+			
+			/*给生日加上年月日*/
+			var birth="19941128";
+			birth=birth.replace(
+				/(\d{4})(\d{2})(\d{2})/,
+				"$1年$2月$3日"
+			);
+// 			birth=
+// 				birth.substr(0,4)+"年"
+// 				+birth.substr(4,2)+"月"
+// 				+birth.substr(6)+"日";
+			console.log(birth);
+		</script>
+	</body>
+ </html>

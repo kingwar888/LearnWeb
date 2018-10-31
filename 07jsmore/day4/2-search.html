@@ -1,0 +1,16 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			//输入一个消息验证里面是否有微信敏感词
+			var msg=prompt("请输入消息");
+			var i=msg.search(/(微|w(ei)?)\s*(|信(in)?)/);
+			console.log(
+			i==-1?"发送成功":"发现敏感词不能发送")
+		</script>
+	</body>
+ </html>

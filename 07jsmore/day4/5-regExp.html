@@ -1,0 +1,18 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			var str="床前明月光，一行白鹭上青天，日照香炉生紫烟";
+			var names=["明月","白鹭","青天"];
+			
+			var reg=new RegExp(names.join("|"),"g");
+			var kws=str.match(reg);
+			console.log(kws);
+			
+		</script>
+	</body>
+ </html>

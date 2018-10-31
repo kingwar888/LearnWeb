@@ -1,0 +1,17 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			var reg=/^\d{6}$/;
+			
+			while(!reg.test(prompt("请输入密码"))){//返回值boolen类型
+				alert("密码格式不对");
+			}
+			document.write("验证通过！");
+		</script>
+	</body>
+ </html>

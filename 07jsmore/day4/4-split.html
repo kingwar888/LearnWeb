@@ -1,0 +1,53 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		
+			<!-- ul#ulname>li*6 -->
+			<ul id="ulNames">
+				<li>z</li>
+				<li>y</li>
+				<li>x</li>
+				<li>s</li>
+				<li>s</li>
+				<li>c</li>
+			</ul>
+			<script>
+				//获得ulNames的innerhtml,保存在html中
+				var html=ulNames.innerHTML;
+				//删除html开头的空字符<li>和结尾的</li>空字符
+				html=html.replace(/^\s*<li>|<\/li>\s*$/g,"");//</li>前面加一个转义字符
+				//将html按</li>空字符<li>切割保存在names中
+				var names=html.split(/<\/li>\s*<li>/);
+				ulNames.innerHTML=names.sort();
+				debugger;
+				
+				var names=
+					ulNames.innerHTML=	"<li>"+
+					(
+					ulNames.innerHTML//获取内容
+						   .replace(
+							/^\s*<li>|<\/li>\s*$/g,""	//掐头去尾
+						   )
+						   .split(/<\/li>\s*<li>/)		//切割
+						   .sort()			//排序
+						   .join("</li><li>")	//拼接
+						   )+"</li>"	//补全
+						   ;
+				debugger;
+				
+				/*切割邮箱*/
+				var mail="chenjinhua@qq.com";
+				var name="";
+				var doname="";
+				var arr=mail.split(/@/);
+				name=arr[0];
+				doname=arr[1];
+				console.log(name);
+				console.log(doname);
+		</script>
+	</body>
+ </html>
