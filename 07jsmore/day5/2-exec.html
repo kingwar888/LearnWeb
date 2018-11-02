@@ -1,0 +1,17 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		
+		<script>
+			var html='<link href="<link href="index.css"/><body><a name="top"></a><h1>welcome</h1><ul><li><a class="active" href="http://tmooc.cn">go to tmooc</a></li><li><a href="http://tedu.cn" target="_blank">go to tedu</li></ul></body>';
+			var reg=/<a\s[^>]*?href="([^"]*?)"/ig;//第一个分组的子内容被放进arr中1
+			while(reg.exec(html)!=null){
+				console.log(RegExp.$1);//RegExp.$n可以获得本次找到的第n个分组的子内容
+			}
+		</script>
+	</body>
+ </html>
