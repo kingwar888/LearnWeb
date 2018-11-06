@@ -1,0 +1,22 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			function outer(){
+				var i=999;
+				nAdd=function(){i++};
+				return function(){console.log(i)};
+			}
+			var getNum=outer();
+			getNum();//999
+			nAdd();//对i进行+1操作
+			getNum();//1000
+			getNum();//1000
+			getNum();//1000
+		</script>
+	</body>
+ </html>

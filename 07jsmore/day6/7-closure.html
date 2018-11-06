@@ -1,0 +1,30 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			//闭包
+			//外层函数包裹受保护的变量和内层函数
+			function outside(){
+				var i=1;//AO
+				//外层函数返回内层函数对象
+				return function(){
+					console.log(i++);
+				}
+			}
+			//使用者调用外层函数获得内层函数对象
+			var getNum=outside();
+			//getNum:function(){console.log(i++)}
+			//核心问题:outer()结束后,outer的AO释放？
+			getNum();
+			getNum();
+			//尝试污染
+			i=1;//window全局
+			getNum();
+			getNum();
+		</script>
+	</body>
+ </html>

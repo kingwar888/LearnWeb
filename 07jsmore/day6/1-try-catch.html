@@ -1,0 +1,38 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			//输入数字
+			var num=parseFloat(prompt("请输入一个数字"));
+			//输入需要转换的小数位数
+			var d=parseInt(prompt("请输入小数位数"));
+			//错误处理 try-catch方法
+			try{
+				var r=num.toFixed(d);
+				document.write(r+"<br>");
+			}catch(err){
+				alert("小数位置请介于0-20之间"); //给用户看
+				console.log(err);				//给开发看
+			}finally{   	     				//finnally不管程序错不错都是执行的
+				console.log("释放资源");
+				num=null;
+				d=null;
+			}
+			//自己提前预知错误,自己判断
+		/*	if(d>=0&&d<=20){
+				var r=num.toFixed(d);
+				document.write(r+"<br>");
+			}else{
+				var msg="小数位置请介于0-20之间";//用这种方法没有err,所以err内容要自己写
+				alert(msg);//给用户看
+				console.log(msg);//给开发看
+			}
+		*/	
+			document.write("正常结束");
+		</script>
+	</body>
+ </html>

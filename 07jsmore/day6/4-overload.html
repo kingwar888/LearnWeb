@@ -1,0 +1,25 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<!-- lorem假文 -->
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In maiores sint fuga tempora consequatur debitis nihil nobis pariatur nesciunt veritatis fugiat libero repellat et enim voluptatum minus sequi quisquam quis!</p>
+		<script>
+			function pay(){
+				//arguments[].length
+				if(arguments.length==0)
+					console.log("微信支付");
+				else if(arguments.length==1)
+					console.log("现金支付，收您"+arguments[0]+"元");
+				else if(arguments.length==2)
+					console.log("刷卡支付，您的卡号"+arguments[0]+"扣款成功");
+			}
+			pay();
+			pay(100);
+			pay("1888888","123456");
+		</script>
+	</body>
+ </html>

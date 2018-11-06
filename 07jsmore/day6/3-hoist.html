@@ -1,0 +1,50 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			//申明会被提前
+// 			function f(){console.log(1)}
+// 			f();//?2
+// 			function f(){console.log(2)}
+// 			f();//?2
+// 			var f=100;
+// 			console.log(f);//?100
+// 			f();//?typeErr
+			
+		/*	function f(){console.log(1)}
+			function f(){console.log(2)}
+			var f;
+			f();//?2
+			f();//?2
+			f=100;
+			console.log(f);//?100
+			f();//?typeErr
+		*/	
+			
+			
+			
+			//直接量不会被提前
+			var f1=function(){console.log(1)}
+			f1();//? 
+			var f1=function(){console.log(2)}
+			f1();//?
+			var f1=100;
+			console.log(f1);
+			f1();//?
+			
+		/*	var f1;
+			var f1=function(){console.log(1)}
+			f1();//?1
+			var f1=function(){console.log(2)}
+			f1();//?2
+			f1=100;
+			console.log(f1);100
+			f1();//?typeErr
+		*/	
+		</script>
+	</body>
+ </html>

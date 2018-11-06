@@ -1,0 +1,31 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			//四舍五入的方法
+			function round(num,d){
+				if(!isNaN(num)&&!isNaN(d)){
+					num*=Math.pow(10,d);
+					num=Math.round(num);
+					return num/Math.pow(10,d)
+				}else{
+					//把错误主动抛给调用函数的人
+					throw new Error("参数必须为数字！");
+				}
+			}
+			//调用方法
+			var num=parseFloat(prompt("请输入一个数字"));
+			var d=parseInt(prompt("请输入几位小数"));
+			try{
+				document.write(round(num,d));
+			}catch(err){
+				alert(err);
+				console.log(err)
+			}
+		</script>
+	</body>
+ </html>
