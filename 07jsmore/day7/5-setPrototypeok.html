@@ -1,0 +1,26 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			var hmm={
+				sname:"han mei mei",
+				sage:21,
+				intr(){
+					console.log(`I'm ${this.sname},I'm &{this.sage}`);
+				}
+			}
+			hmm.intr();
+			var fater={
+				bal:100000,car:"infiniti"
+			}
+			//让hanmeimei继承fater
+			Object.setPrototypeOf(hmm,fater);
+			console.dir(hmm);
+			console.log(hmm.bal);
+		</script>
+	</body>
+ </html>

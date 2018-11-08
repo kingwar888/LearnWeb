@@ -1,0 +1,36 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+// 			var lilei={
+// 				sname:"li Lei",
+// 				sage:11,
+// 				intr(){//es6可以不要冒号和fucntion
+// 					console.log(`I'm ${this.sname},I'm ${this.sage}`)//不加this只能在作用域里找,加了可以去对象里找
+// 				}
+// 			}
+			
+			
+			var lilei=new Object();//或者{} 或者object() 或者 new Object
+			lilei.sname="Li Lei";
+			lilei.sage=11;
+			lilei.intr=function(){
+				console.log(`I'm ${this.sname},I'm ${this.sage}`)
+			}
+			
+			console.dir(lilei);
+			console.log(lilei.sname);
+			lilei.intr();
+			lilei.sage++;
+			console.log(lilei["sage"]);//12   js的本质是一个大的关联数组
+			lilei.intr();
+			var lixl=lilei;//赋值给一个全局变量,用this不会受影响
+			lilei=null;
+			lixl.intr();//AO：this->lixl{...}
+		</script>
+	</body>
+ </html>

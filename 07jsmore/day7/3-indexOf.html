@@ -1,0 +1,32 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			//如果Array.prototype中没有indexof
+			if(typeof Array.prototype.indexOf!="function")
+				//向Array.prototype中添加indexOf方法
+				Array.prototype.indexOf=
+					function(val,fromi){
+						document.write("自定义的indexOf<br>")
+						//如果fromi是undefined,fromi默认为0
+						fromi=fromi||0;
+						//i从fromi开始,遍历当前数组
+						for(var i=fromi;i<this.length;i++)
+							//如果当前数组的当前元素值为val
+							if(this[i]==val)
+								return i;//返回i
+						//（遍历结束）
+						return -1;//返回-1		
+					}
+			var arr=[1,2,3,2,1];
+				   //0 1 2 3 4
+			document.write(arr.indexOf(2)+"<br>");//1
+			document.write(arr.indexOf(2,2));//3
+			document.write(arr.indexOf(2,4));//-1
+		</script>
+	</body>
+ </html>

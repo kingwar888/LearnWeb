@@ -1,0 +1,51 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			//构造函数
+			//学生:sname sage intr()
+			function Student(sname,sage){
+				this.sname=sname;
+				this.sage=sage;
+				
+			}
+			Student.prototype.intr=function(){//原型对象
+				console.log(`I'm ${this.sname},I'm ${this.sage}`)
+			}
+			Student.prototype.sclass="初一2班";
+			
+			var lilei=new Student("Li lei",11);
+			var hmm=new Student("Han Mei Mei",12);
+			console.dir(lilei);
+			lilei.intr();
+			console.dir(hmm);
+			hmm.intr();
+			
+			console.log(lilei.intr)
+			console.log(hmm.intr)
+			console.log(lilei.intr==hmm.intr);//true
+			console.log(lilei.sclass);
+			console.log(hmm.sclass);
+			
+			//判断属性是自有 共有 没有
+			function checkProperty(obj,pname){
+				if(obj.hasOwnProperty(pname))
+					console.log("自有");
+				//else if(obj[pname]!==undefined)
+				//判断obj或者obj的父对象包含属性名嘛,包含就返回true
+				else if(pname in obj)
+					console.log("共有");
+				else
+					console.log("没有");
+			}
+			checkProperty(lilei,"sname");//自有
+			checkProperty(hmm,"sclass");//共有
+			checkProperty(lilei,"bal");//没有
+			
+		</script>
+	</body>
+ </html>
