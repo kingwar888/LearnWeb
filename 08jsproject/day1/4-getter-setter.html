@@ -1,0 +1,32 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			//定义eric的属性
+			var eric={id:1001,ename:"eric"};
+			//把访问器属性定义在闭包结构中 
+			+function(){
+				var _age;
+				Object.defineProperty(eric,"age",{
+					get:function(){
+						return _age;
+					},
+					set:function(val){
+						if(val>=18&&val<=65){
+							_age=val;
+						}else
+						throw new RangeError("年龄必须在18~65岁之间");
+					}
+				})
+			}();
+			//eric.age=10;//报错范围错误
+			eric.age=26;
+			eric._age=10;//赋值给全局不受影响
+			console.log(eric.age);
+		</script>
+	</body>
+ </html>

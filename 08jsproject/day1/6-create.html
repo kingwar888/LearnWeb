@@ -1,0 +1,49 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			//基于一个父对象,创建一个新对象,并为子对象扩展新属性
+			
+			//增加ie8的兼容.ie8不支持create也不支持es5
+			if(typeof Object.create!=="function"){
+				Object.create=function(fater,props){
+					//创建新对象,继承fater
+					function f(){};//媳妇
+					f.prototype=fater;//媳妇->fater结婚
+					var obj=new f();//生小孩
+					F=null;//释放媳妇
+					if(props){//如果有第二个属性
+						//遍历props每个属性
+						for(var key in props){
+							//为obj添加新属性:
+								//属性名为key
+								//属性值为props中key属性的value值
+								obj[key]=props[key].value;
+						}
+					}
+					return obj;//返回新对象
+				}
+			}
+			
+			var fater={
+				bal:100000,
+				car:"infiniti"
+			}
+			var hmm=Object.create(fater,{
+				phone:{
+					value:"iPhone XS",
+					writable:true,
+					enumerable:true,
+					configurable:true
+				}
+			});
+			for(var key in hmm){
+				document.write(key+":"+hmm[key]+"<br>")
+			}
+		</script>
+	</body>
+ </html>

@@ -1,0 +1,54 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			"use strict";
+			function Emp(id,name,salary,age){
+				//this->新对象
+				//id只读,禁止删除
+				//name禁止删除
+				//salary禁止遍历,禁止删除
+				//age:18~65之间
+				this.id=id;
+				this.name=name;
+				this.salary=salary;
+				
+				var _age;
+				Object.defineProperties(this,{
+					id:{writable:false},
+					//name:{configurable:false},
+					salary:{enumerable:false},
+					age:{
+						get(){
+							return _age;
+						},
+						set(val){
+							if(val>=18&&val<=65){
+								_age=val;
+							}else
+								throw new RangeError("年龄必须在18~65之间");
+						},
+						enumerable:true
+					}
+				})
+				this.age=age;
+				//1防止扩展:
+				//设置当前新对象禁止扩展新属性
+				//Object.preventExtensions(this);
+				//2密封对象  相当于2件事1:防扩展2:相当于configurable:false
+				//Object.seal(this);
+				//3冻结对象
+				Object.freeze(this);
+			}
+			var lilei=new Emp(1001,"lilei",10000,26);
+			lilei.age=29;
+			//lilei.Age=2;
+			console.dir(lilei);
+			
+		</script>
+	</body>
+ </html>

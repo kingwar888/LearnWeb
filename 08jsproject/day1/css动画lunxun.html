@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>css 实现无缝轮播</title>
+
+<style>
+
+*{margin: 0;padding: 0;}
+
+div{
+
+width: 1000px;
+
+margin: 300px auto;
+
+border: 1px solid #ccc;
+
+overflow: hidden;
+
+}
+
+ul{ /*通过在轮播图后面增加同样的图片来遮挡每次移动结束后的空白间隙，所以需要给足够容纳ul里面所有图片的长度的值*/
+
+width: 8000px;
+
+list-style: none; /*infinite为无限循环，让轮播无止尽的循环下去*/
+
+animation: imgAnimation 20s linear infinite;
+
+}
+
+ul>li{float: left;}
+
+ul li img{
+
+width: 240px;
+
+vertical-align: middle;
+
+padding: 10px 5px;
+
+}
+
+@keyframes imgAnimation{
+
+from{}
+
+to{
+
+/*设置让动画每移动到添加之前的长度之后从新恢复到起始位置*/
+
+transform:translate(-1000px);
+
+}
+
+}
+
+ul:hover{
+
+animation-play-state:paused;
+
+/*通过伪元素控制鼠标的移入轮播图的变化，如果图片为a标签嵌套的话就可以实现不用js注册事件都可以点击的轮播图效果*/
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div>
+
+<ul>
+
+    <li><img src="im"></li>
+
+    <li><img src="img/2.jpg"></li>
+
+    <li><img src="img/3.jpg"></li>
+
+    <li><img src="img/4.jpg"></li>
+
+    <li><img src="img/5.jpg"></li>
+
+    <li><img src="img/1.jpg"></li>
+
+    <li><img src="img/2.jpg"></li>
+
+    <li><img src="img/3.jpg"></li>
+
+    <li><img src="img/4.jpg"></li>
+
+    <li><img src="img/5.jpg"></li>
+
+</ul>
+
+</div>
+
+</body>
+
+</html>

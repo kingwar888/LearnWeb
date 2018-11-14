@@ -1,0 +1,41 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			"use strict";//启用严格模式
+			
+			var kobe={id:1001,ename:"kobe",salary:888888};
+			//获取kobe对象的id属性的四大特性
+// 			var attrs=Object.getOwnPropertyDescriptor(kobe,"id");
+// 			console.dir(attrs);
+			//修改kobe对象的id属性为只读
+// 			Object.defineProperty(kobe,"id",{
+// 				writable:false,//设置只读
+// 				configurable:false//禁止修改其他特性,不可逆
+// 								//同时也禁止删除
+// 				});
+			//delete kobe.id;//报错：因为configurable禁止删除
+// 			kobe.id+=1;	
+// 			Object.defineProperty(kobe,"id",{
+// 				writable:true,
+// 				configurable:true//不可逆
+// 			})
+			//同时操作好几个属性的特性
+			Object.defineProperties(kobe,{
+				id:{writable:false,configurable:false},
+				ename:{configurable:false},
+				salary:{enumerable:false,configurable:false}
+			})
+			
+			console.dir(kobe);
+			for(var Key in kobe){
+				console.log(Key+":"+kobe[Key])
+			}
+			console.log(kobe.salary);
+		</script>
+	</body>
+ </html>
