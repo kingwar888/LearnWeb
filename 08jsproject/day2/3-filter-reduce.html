@@ -1,0 +1,26 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			var arr1=[1,2,3,4,5];
+			var arr2=[2,4,6,8,10];
+			var evens=arr1.filter(val=>val%2==0);
+			console.log(arr1);//不改变原数组
+			console.log(evens);
+			
+			var sum=arr1.reduce(function(prev,val){
+				return prev+val;
+			}/*，strat*/);
+			console.log(sum);
+			
+			sum=arr2.reduce(function(prev,val){
+				return prev+val;
+			},sum);
+			console.log(sum);
+		</script>
+	</body>
+ </html>

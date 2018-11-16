@@ -1,0 +1,48 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			var arr1=[1,2,3,4,5];
+			var arr2=[10,8,6,4,2];
+			var arr3=[1,2,3,2,1];
+			//判断给定数组是否都是偶数
+			function allEven(arr){
+				return arr.every(function(val){
+					return val%2==0;
+				})
+			}
+			//判断给定数组是否含有偶数
+			function haveEven(arr){
+				return arr.some(function(val){
+					return val%2==0;
+				})
+			}
+			//判断给定数组是否为升序
+			function isASC(arr){
+				return arr.every(
+				(val,i,arr)=>i<arr.length-1?val<=arr[i+1]:true
+				);
+			}
+			console.log(
+				allEven(arr1),
+				allEven(arr2),
+				allEven(arr3)
+			)
+			console.log(
+				haveEven(arr1),
+				haveEven(arr2),
+				haveEven(arr3)
+			)
+			console.log(
+				isASC(arr1),
+				isASC(arr2),
+				isASC(arr3)
+			)
+			
+		</script>
+	</body>
+ </html>

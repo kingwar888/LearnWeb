@@ -1,0 +1,19 @@
+ <!doctype html>
+ <html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">	
+	</head>
+	<body>	
+		<script>
+			var arr1=[1,2,3,4,5];
+			var arr2=[2,4,6,8,10];
+			arr1.forEach((val,i,arr)=>arr[i]*=2);
+			console.log(String(arr2));
+			
+			var newArr=arr2.map((val)=>val/2);
+			console.log(String(arr2));
+			console.log(String(newArr));
+		</script>
+	</body>
+ </html>
