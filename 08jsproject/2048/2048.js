@@ -51,12 +51,22 @@ var game = {
         for (var r = 0; r < this.RN; r++) {
             for (var c = 0; c < this.CN; c++) {//遍历date
                 if (this.data[r][c] == 0) { return false; }//如果当前元素是否为0，返回flase
-                else if (this.data[r][c] == this.data[r][this.RN-1]) {//否则，如果c<cn-1且当前元素等于右侧元素时
-                    return false;
-                }//返回flase
-                else if (this.data[r][c] == this.data[this.RN-1][c]) {//否则，如果r<rn-1且当年元素等于下方元素时
-                    return false;
-                }//返回flase
+                // else if (this.data[r][c] == this.data[r][c+1]) {//否则，如果c<cn-1且当前元素等于右侧元素时
+                //     return false;
+                // }//返回flase
+                // else if (this.data[r][c] == this.data[r+1][c]) {//否则，如果r<rn-1且当年元素等于下方元素时
+                //     return false;
+                // }//返回flase
+                if(c!=(this.CN-1)){
+                	if (this.data[r][c] == this.data[r][c+1]) {//否则，如果c<cn-1且当前元素等于右侧元素时
+	                    return false;
+	                }
+                }
+                if(r!=(this.RN-1)){
+                	if (this.data[r][c] == this.data[r+1][c]) {//否则，如果c<cn-1且当前元素等于右侧元素时
+	                    return false;
+	                }
+                }
             }
         }//遍历结束
         return true;//返回true
@@ -75,9 +85,9 @@ var game = {
         if (before != after) {//如果before不等于after
             //随机生成数
             this.randomNum();
-            if(this.isGameOver()){//如果游戏结束
-            this.state=this.GAMEOVER;
-        }//修改游戏状态
+            if (this.isGameOver()) {//如果游戏结束
+                this.state = this.GAMEOVER;
+            }//修改游戏状态
             //更新页面
             this.updateView();
         }
@@ -128,6 +138,9 @@ var game = {
         if (before != after) {//如果发生了移动
             //随机生成数
             this.randomNum();
+            if (this.isGameOver()) {//如果游戏结束
+                this.state = this.GAMEOVER;
+            }//修改游戏状态
             //更新页面
             this.updateView();
         }
@@ -175,6 +188,9 @@ var game = {
         if (before != after) {//如果before不等于after
             //随机生成数
             this.randomNum();
+            if (this.isGameOver()) {//如果游戏结束
+                this.state = this.GAMEOVER;
+            }//修改游戏状态
             //更新页面
             this.updateView();
         }
@@ -225,6 +241,9 @@ var game = {
         if (before != after) {//如果发生了移动
             //随机生成数
             this.randomNum();
+            if (this.isGameOver()) {//如果游戏结束
+                this.state = this.GAMEOVER;
+            }//修改游戏状态
             //更新页面
             this.updateView();
         }
