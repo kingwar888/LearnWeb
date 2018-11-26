@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>读取并修改元素的内容</title>
+<meta charset="utf-8" />
+<style>
+  div{position: absolute;top: 0;bottom: 0;}
+  #d1{/*1,定义起始样式*/
+    width: 200px;background-color: #ccff00;
+    overflow: hidden;
+    transition: all .5s linear;
+    }
+  #d1.close{/*2,定义结束样式*/
+    width: 0;
+  }  
+  #d2{/*1,定义起始样式*/
+    width: 20px;
+    cursor: pointer;
+    background-color: #ffcc00;
+    left: 200px;
+    transition: all .5s linear;
+  }
+  #d2.close{/*2,定义结束样式*/
+    left: 0;
+  }
+</style>
+</head>
+<body>
+	<div id="d1">树形列表</div>
+	<div id="d2">&lt;&lt;</div>
+  <script>
+    //找到id为d2的div，为其绑定单击事件为toggle
+    document.getElementById("d2").onclick=toggle;
+    //定义函数toggle
+    function toggle(){
+    //找到id为d1的div，保存在d1中
+    var d1=document.getElementById("d1")
+    if(this.innerHTML=="&lt;&lt;"){//如果当前d2的内容是<<
+     //设置d1的className为close
+     d1.className="close";
+     //设置当前d2的className为close
+     this.className="close";
+     //设置当前d2的innerHTML为>>
+     this.innerHTML="&gt;&gt;";
+    }else{//否则
+     //清除d1的className
+     d1.className="";
+     //清除d2的className
+     this.className="";
+     //设置当前d2的innerHTML为<<
+     this.innerHTML="&lt;&lt;";
+}}
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+li{
+	list-style:none;
+}
+li span{
+	padding-left: 20px;
+	cursor: pointer;
+}
+li span+ul{/*1,*/
+	height: 75px;/**/
+	opacity: 1;
+	overflow: hidden;/**/
+	transition: all .5s linear;/**/
+}
+.open{ background: url("../img/minus.png") no-repeat center left; }
+.closed{ background: url("../img/add.png") no-repeat center left; }
+/* .show{ display: block; } */
+.hide{/*2，设置目标样式的css属性*/
+	height: 0;
+	opacity: 0;
+}
+/*3，根据条件，切换动画元素上的class*/
