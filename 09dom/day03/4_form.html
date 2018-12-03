@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>表单提交验证</title>
+	<meta charset="utf-8" />
+	<style>
+		.hintText{color: #aaaaaa; font-style: italic; }
+	.normalText { color: #000000;}
+</style>
+	<script>
+
+	</script>
+
+</head>
+
+<body>
+	<h2>发表留言</h2>
+	<form name="msgForm">
+		姓名：<input name="userName" class="hintText" value="请输入您的姓名" />
+		<span>姓名不能为空</span><br />
+
+		内容：<textarea name="content" class="hintText" rows="5" cols="30" style="resize:none">请输入留言内容</textarea><br />
+		<label>
+			<input type="checkbox" />我已阅读了《常见问题列表》
+		</label><br />
+		<input type="button" disabled value="提交" />
+	</form>
+
+	<script>
+		//找到form
+		var form = document.forms[0];
+		//为form中最后一个input绑定单击事件
+		form.elements[form.length - 1].onclick = function(){
+			//如果form中userName的内容为“请输入您的姓名”
+			if (form.userName.value == "请输入您的姓名")
+				//让form的userName获得焦点
+				form.userName.focus();
+			//否则，如果form中的content的内容为“请输入留言内容”
+			else if (form.content.value == "请输入留言内容")
+				//让form的content获得焦点
+				form.content.focus();
+			else//否则
+				form.submit();//提交表单
+		}
+		//为form中倒数第二个input绑定单击事件
+		form.elements[form.length - 2].onclick = function () {
+			//设置form的倒数第一个input的disable和当前input的checked相反！
+			form.elements[form.length - 1].disabled =
+				!this.checked;
+		}
+		//为form下的userName绑定获得焦点事件
+		form.userName.onfocus = function () {
+			//调用getForcus，传入this和“请输入您的姓名”
+			getFocus(this, "请输入您的姓名");
+		}
+		//为form下的content绑定获得焦点事件
+		form.content.onfocus = function () {
+			//调用getFocus，传入this和“请输入留言内容”
+			getFocus(this, "请输入留言内容");
+		}
+		//定义函数getFocus，接收一个参数
+		function getFocus(txt, msg) {
+			//如果当前元素的内容为msg
+			if (txt.value == msg) {
+				//清除当前元素的内容
+				txt.value = "";
+				//清除当前元素的class
+				txt.className = "";
+			}
+		}
+		//为form下的userName绑定失去焦点事件
+		form.userName.onblur = function () {
+			//调用myblur，传入“请输入您的姓名”
+			myblur(this, "请输入您的姓名");
+		}
+		//为form下的content绑定失去焦点事件
+		form.content.onblur = function () {
+			//调用myblur，传入“请输入留言内容”
+			myblur(this, "请输入留言内容");
+		}//定义函数myblur，接收参数msg
+		function myblur(txt, msg) {
+			//定义正则reg：空字符或msg
+			var reg = new RegExp("^(\\s*|" + msg + ")$")
+			//如果用reg验证当前元素的内容为true
+			if (reg.test(txt.value)) {
+				//设置当前元素的内容msg	
+				txt.value = msg;
+				//设置当前元素的class为hintText
+				txt.className = "hintText";
+			}
+		}
+	</script>
+
+</body>
+
+</html>
