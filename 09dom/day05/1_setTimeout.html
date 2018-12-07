@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+	<!---->
+	<title></title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<script>
+		//定时器中的任务函数永远是最后执行
+		// var a=10;
+		// setTimeout("console.log(a)",0);
+		// a=100;
+
+		//定时器中的任务函数中的this默认指window
+		var lilei={
+			sname:"lilei",
+			intr(){console.log("i am "+this.sname)}
+		};
+		lilei.intr();
+		setTimeout(lilei.intr.bind(lilei),0);
+	</script>
+</body>
+
+</html>

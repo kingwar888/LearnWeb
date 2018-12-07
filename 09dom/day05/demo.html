@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+   <head>
+       <!---->
+       <title></title>
+       <meta charset="utf-8">	
+   </head>
+   <body>	
+    <button id="btn">shoot</button>
+    <script>
+        function zd1(){
+            console.log("普通子弹")
+        }
+        function zd2(){
+            console.log("追踪子弹")
+        }
+        var btn=document.getElementById("btn");
+        btn.addEventListener("click",zd1);
+        btn.addEventListener("click",zd2);
+        btn.removeEventListener("click",zd2);
+    </script>
+   </body>
+</html>

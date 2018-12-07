@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>打开新链接方式总结</title>
+	<script>
+			/*打开新链接方式总结：
+1. 在当前窗口打开，可后退
+2. 在当前窗口打开，不可后退
+3. 在新窗口打开，可重复打开
+4. 在新窗口打开，不可重复打开
+*/
+	</script>
+</head>
+
+<body>
+	<a href="http://www.baidu.com">在当前窗口打开，可后退</a>
+	<a href="javascript:open('http://www.baidu.com','_self')">在当前窗口打开，可后退(js)</a>
+	<br>
+	<a href="http://www.baidu.com" target="_blank">在新窗口打开，可重复打开</a>
+	<a href="javascript:open('http://www.baidu.com','_blank')">在当前窗口打开，可后退(js)</a>
+	<br>
+	<a href="http://www.baidu.com" target="baidu">在新窗口打开，不可重复打开</a>
+	<a href="javascript:open('http://www.baidu.com','baidu')">在当前窗口打开，不可后退(js)</a>
+	<br>
+	<!-- 用新url替换history中当前url，达到不可后退的目的 -->
+	<a href="javascript:location.replace('http://www.baidu.com','_blank')">在当前窗口打开，可后退(js)</a>
+	<br>
+</body>
+
+</html>
