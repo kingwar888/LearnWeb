@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>根据页面滚动位置显示浮动框</title>
+	<link rel="stylesheet" href="css/7.css"/>
+	<script>
+
+	</script>
+ </head>
+ <body>
+	<div id="toTop">
+		<a href="#">返回顶部</a>
+	</div>
+	<script>
+		//获得id为toTop的div
+		var div=document.getElementById("toTop");
+		document.body.onscroll=function(){
+			//如果滚动超过的距离》=500，就显示回到顶部div
+			if(document.body.scrollTop>=500)
+				div.style.display="block";
+			else//否则就影藏
+				div.style.display="none";
+			
+		}
+	</script>
+ </body>
+</html>

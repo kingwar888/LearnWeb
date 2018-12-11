@@ -1,0 +1,31 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>事件处理</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/3.css"/>
+
+	</head>
+	<body>
+		<div class="d1">
+			<div class="d2">
+				<div class="d3">
+				</div>
+			</div>
+		</div>
+    <script>
+      function highLight(e){//定义函数highLight
+        //弹出提示：我是+class
+        alert("我是"+this.className);
+        //取消冒泡：停止蔓延
+        e.stopPropagation();
+      }
+      //找到class为d1的元素绑定单击事件为highLight
+      document.querySelector(".d1").addEventListener("click",highLight);
+      //找到class为d2的元素绑定单击事件为highLight
+      document.querySelector(".d2").addEventListener("click",highLight);  
+      //找到class为d3的元素绑定单击事件为highLight    
+      document.querySelector(".d3").addEventListener("click",highLight);
+		</script>
+	</body>
+</html>
