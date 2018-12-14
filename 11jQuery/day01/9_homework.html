@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>...</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: #000
+    }
+
+    .dropdown {
+      position: relative
+    }
+
+    .dropdown-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid #aaa;
+      position: absolute;top:30px;
+      height: 0;opacity: 0;overflow: hidden;
+      transition: all .5s linear;
+    }
+    .dropdown>.in{/*结束状态*/
+      opacity: 1;height: 110px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="dropdown">
+    <a data-trigger="dropdown" href="#">Dropdown</a>
+    <ul class="dropdown-menu">
+      <li><a>Action</a></li>
+      <li><a>Another action</a></li>
+      <li><a>Something else here</a></li>
+      <li>
+        <hr>
+      </li>
+      <li><a>Separated link</a></li>
+    </ul>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+      //为data-trigger为dropdown的元素绑定单击事件
+      $(".dropdown").mouseover(//需要给父元素绑定  冒泡
+        //console.log("hello"),
+        function () {
+          var $menu = $(".dropdown>.dropdown-menu");
+          // $menu.css("display",
+          //   $menu.css("dispaly") == "none" ? "block" : "none"
+          // );
+          
+          // if($menu.hasClass("in"))
+          //   $menu.removeClass("in");
+          // else
+          //   $menu.addClass("in");
+          
+          $menu.toggleClass("in");    
+        }
+      ).mouseout(
+        function () {
+          var $menu = $(".dropdown>.dropdown-menu");
+          $menu.toggleClass("in");    
+        }
+      );
+    </script>
+  </div>
+</body>
+
+</html>

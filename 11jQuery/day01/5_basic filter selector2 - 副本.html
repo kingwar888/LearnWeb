@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8" />
+ <title>...</title>
+  <style>
+    .btn-group{list-style: none;}
+    .btn-group>li{
+      padding: 6px 12px;
+      border: 1px solid #aaa;
+      float: left;
+    }
+    
+    /*删除除最后一个li的右边框*/
+    /* .btn-group>li:not(:last-child){
+      border-right: none;
+    } */
+    /*设置第一个li的左上圆角和左下圆角4px*/
+    /* .btn-group>li:first-child{
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    } */
+    /*设置最后一个li的右上圆角和右下圆角4px*/
+    /* .btn-group>li:last-child{
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }  */
+  </style>
+</head>
+<body>
+  <ul class="btn-group">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+    //删除除最后一个li的右边框
+    $(".btn-group>li:lt(3)").css("borderRight","none");
+    //设置第一个li的左上圆角和左下圆角4px
+    $(".btn-group>li:first").css({
+      borderTopLeftRadius:4,
+      borderBottomLeftRadius:4,
+    });
+    //设置最后一个li的右上圆角和右下圆角4px
+    $(".btn-group>li:last").css({
+      borderTopRightRadius:4,
+      borderBottomRightRadius:4,
+    });
+  </script>
+</body>
+</html>
+ 
