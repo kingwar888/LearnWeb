@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+ <body>
+    <h1>操作元素的内容和值</h1>
+    <form action="">
+        用户名：<input name="uname">
+        <span id="uname-msg"></span><br>
+        密码：<input name="upwd">
+        <span id="upwd-msg"></span><br>
+        <input type="button" value="提交注册信息">
+    </form>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        function vali(txt,range,msg){
+            //获得当前文本框
+            var $txt=$(txt);
+            var $span=$txt.next();//获得当前文本框的下一个兄弟保存在$span中
+            //如果$txt的内容长度>=3且<=9
+            if($txt.val().length>=range[0]&&$txt.val().length<=range[1])
+                //设置$span的内容为：
+                $span.html("<img src='img/ok.png'>");
+            else//否则，就设置$span的内容为 
+                $span.html("<img src='img/err.png'>"+msg); 
+        }
+        
+        $("form>[name='uname']").blur(function(){
+             vali(this,[3,9],"用户名必须3~9个字符"); 
+        });
+        $("form>[name='upwd']").blur(function(){
+            vali(this,[6,8],"密码必须6~8个字符");
+        });
+    </script>
+ </body>
+</html>

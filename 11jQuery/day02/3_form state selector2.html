@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+ <body>
+     <form action="">
+        请选择您关注的话题<br> 
+        <input type="checkbox">体育
+         <input type="checkbox">音乐
+         <input type="checkbox">搞笑
+         <input type="checkbox">娱乐
+         <input type="button" value="进入我的微博">
+     </form>
+     <script src="js/jquery-1.11.3.js"></script>
+     <script>
+     //选择type为button的元素绑定单击事件
+     $("form>:button").click(function(){
+        //选择状态为checked的元素，保存在chbs中
+        var $chbs=$("form>:checked");
+        //如果chbs的元素个数是0
+        if($chbs.length==0)
+            alert("至少选择一项！");
+        else//否则
+            document.write("欢迎开通微博！");
+
+        })
+     </script>
+ </body>
+</html>

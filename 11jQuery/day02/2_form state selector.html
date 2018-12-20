@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>.....</title>
+  <meta charset="utf-8"/>
+  <style>
+  </style>
+ </head>
+ <body>
+     <!-- form>input+input[type="password"]+input[type="checked"]+input[type="button"] -->
+     <form action="">
+         用户名：<input type="text" disabled><br>
+         密 码：<input type="password" disabled><br>
+         角 色：<select>
+             <option value="">-请选择-</option>
+             <option value="">管理员</option>
+             <option value="">用户</option>
+         </select><br>
+         自我介绍:<textarea cols="30" rows="10"></textarea><br>
+         <input type="checkbox">同意本站的使用条款<br>
+         <button disabled>提交注册信息</button>
+     </form>
+     <script src="js/jquery-1.11.3.js"></script>
+     <script>
+         //选择type为checkbox的表单元素绑定单击事件
+         $("form>:checkbox").click(function(){
+            //选择所有不是checkbox的表单元素，设置其disable属性和当前元素的checked相反
+            $("form>:input:not(:checkbox)")
+                .prop("disabled",!$(this).prop("checked"));
+        })
+     </script>
+ </body>
+</html>

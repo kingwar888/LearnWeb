@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+ <body>
+    <button id="btn1">????</button>
+    <button id="btn2">????</button>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+    function sayHello(){alert("Hello")}
+    function sayWorld(){alert("World")}
+    $("#btn1").bind("click",sayHello)
+              .bind("click",sayWorld)
+              .bind("mouseover",function(){
+                  $(this).css("opacity",0.5)
+              })
+              .bind("mouseout",function(){
+                  $(this).css("opacity",1)
+              })
+    $("#btn2").bind("click",function(){
+        // $("#btn1").unbind("click",sayHello);
+        // $("#btn1").unbind("click");
+        $("#btn1").unbind();
+    });         
+    </script>
+ </body>
+</html>
