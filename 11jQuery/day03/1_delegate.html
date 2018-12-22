@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+ </head>
+ <body>
+	<h1>jQuery事件处理——事件代理</h1>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+    // $("body").on("click",{x:1,y:2},function(e){
+    $("body").click({x:1,y:2},function(e){   
+        console.log(e);
+        console.log(e.data);
+        console.log(e.data.y);
+
+    })
+    </script>
+ </body>
+</html>

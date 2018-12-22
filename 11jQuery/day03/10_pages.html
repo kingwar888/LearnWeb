@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> new document </title>
+	<meta charset="utf-8">
+	<meta name="viewport"content="width=device,initial-scale=1,user-scalable=no">
+	<style>
+		body {margin: 0;}
+		.page {
+			position: fixed;
+			left: 0;right: 0;top: 0;bottom: 0;
+		}
+		a.backward,a.forward{
+			position: fixed;
+			display: block;
+			width: 50px;height: 50px;top:50%;margin-top:-25px; 
+			background: #aaa;
+			border: 1px solid #000;
+			text-decoration: none;text-align: center;line-height: 50px;
+			font-size: 2em;font-weight: bold;
+			border-radius: 25px;
+			opacity: .5;
+		}
+		a.backward:hover,a.forward:hover{opacity: 1;}
+		a.backward{left:0}
+		a.forward{left: 100%;margin-left:-53px}
+		.right{left:100%}
+		.left{left:-100%}
+		
+	</style>
+</head>
+
+<body>
+	<!-- <div class="page" style="left: 0; background:#afa;">
+		第一个PAGE
+		<hr>
+	</div>
+	<div class="page" style="left: 100%; background:red;">
+		第二个PAGE
+		<hr>
+	</div>
+	<div class="page" style="left: 100%; background:#aff;">
+		第三个PAGE
+		<hr>
+	</div>
+	<div class="page" style="left: 100%; background:grey;">
+		第四个PAGE
+		<hr>
+	</div> -->
+	<div class="page" style="background:#afa;">
+			第一个PAGE
+			<hr>
+	</div>
+	<div class="page right" style="background:red;">
+			第二个PAGE
+			<hr>
+	</div>
+	<div class="page right" style="background:#aff;">
+			第三个PAGE
+			<hr>
+	</div>
+	<div class="page right" style="background:grey;">
+			第四个PAGE
+			<hr>
+	</div>	
+	<a class="backward">&lt;</a>
+	<a class="forward">&gt;</a>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script>
+			// //获得class为page的div中第一个，绑定单击事件
+			// $(".page:not(:last)").on("click", function () {
+			// 	//让当前div的left在一秒内移动到-100%
+			// 	$(this).animate({ left: "-100%" }, 1000)
+			// 		//让当前div的下一个兄弟的left在一秒内移动到0
+			// 		.next().animate({ left: 0 }, 1000)
+			// })
+			$(".forward").click(function(){
+				var $curr=$(".page:not(.left):not(.right)");
+				var $next=$curr.next(".page");
+				if($next.size()!=0){
+					$curr.addClass("left");
+					$next.removeClass("right");
+				}
+			});
+			$(".backward").click(function(){
+				var $curr=$(".page:not(.left):not(.right)");
+				var $prev=$curr.prev(".page");
+				if($prev.size()!=0){
+					$curr.addClass("right");
+					$prev.removeClass("left");
+				}
+			});
+			
+		</script>
+</body>
+
+</html>

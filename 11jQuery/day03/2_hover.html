@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>...</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: #000
+    }
+
+    .dropdown {
+      position: relative
+    }
+
+    .dropdown-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid #aaa;
+      position: absolute;top:30px;
+      height: 0;opacity: 0;overflow: hidden;
+      transition: all .5s linear;
+    }
+    .dropdown>.in{/*结束状态*/
+      opacity: 1;height: 110px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="dropdown">
+    <a data-trigger="dropdown" href="#">Dropdown</a>
+    <ul class="dropdown-menu">
+      <li><a>Action</a></li>
+      <li><a>Another action</a></li>
+      <li><a>Something else here</a></li>
+      <li>
+        <hr>
+      </li>
+      <li><a>Separated link</a></li>
+    </ul>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+      $("[data-trigger='dropdown']").parent()
+        .hover(
+          function(){//相应mouseover
+            $(this).children(".dropdown-menu")
+                    .addClass("in");
+          },
+          function(){//响应mouseout
+            $(this).children(".dropdown-menu")
+                    .removeClass("in");
+          }
+          //可以直接用toggleClass
+        )
+        
+    </script>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> new document </title>
+    <meta charset="utf-8">
+    <style>
+        img {
+            position: absolute
+        }
+    </style>
+</head>
+
+<body>
+    <h1>练习：jQuery万能动画函数</h1>
+    <img src="img/1.jpg" alt="">
+    <img src="img/2.jpg" alt="">
+    <img src="img/3.jpg" alt="">
+    <img src="img/4.jpg" alt="">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        $("img").click(function () {
+            $(this).css("zIndex",10);
+            var left=parseFloat($(this).css("left"))-50;
+            $(this).animate({//放大透明
+                left:left,
+                width: 300, height: 300, opacity: 0
+            }, 2000, function () {//动画结束后
+                $(this).remove();//移除当前图片
+                $("img").each(function (i) {//重新计算每个img的left
+                    $(this).animate(("left", i * 200))
+                })
+            })
+        })
+            //   .first().css("left",0)
+            //   .next().css("left",200)
+            //   .next().css("left",400)
+            //   .next().css("left",600);
+            .each(function (i) {
+                $(this).css("left", i * 200)
+            })
+
+    </script>
+</body>
+
+</html>

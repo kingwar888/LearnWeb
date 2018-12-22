@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> new document </title>
+    <meta charset="utf-8">
+    <style>
+    .fade{
+        width: 200px;height: 200px;opacity: 1;
+        transition: all 1s linear;
+    }
+    .out{
+        width: 200px;height: 0px;opacity: 0;padding:0;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery动画函数——显示隐藏动画</h1>
+    <button id="btn1">显示影藏div</button>
+    <div id="target" class="fade">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur expedita ipsum
+        dolore recusandae debitis cum libero rem quam accusantium fuga, animi laboriosam maxime adipisci, delectus
+        odio, voluptate nam ducimus.</div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        $("#btn1").click(function () {
+            // $("#target").toggle(1000)
+            // $("#target").slideToggle(1000)
+            $("#target").fadeToggle(1000,function(){
+                alert(
+                $(this).css("display")=="none"?    
+                "来找我呀！":"我出来了!")
+            })
+            // $("#target").toggleClass("out")
+
+        })
+    </script>
+</body>
+
+</html>
