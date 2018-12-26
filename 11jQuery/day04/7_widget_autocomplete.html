@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+	<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.css">
+ </head>
+ <body>
+  <h1>jQueryUI：Widgets —— Autocomplete</h1>
+	
+	菜品搜索：<input type="text" name="search">
+	
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+	<script>
+		var list=["鱼香肉丝","松鼠桂鱼","鱼香茄子","木须肉","京酱肉丝"];
+		$(":input").autocomplete({
+			source:list
+		});
+	</script>
+ </body>
+</html>

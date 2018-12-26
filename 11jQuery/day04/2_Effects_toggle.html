@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+	<style>
+		.box {
+			border: 1px solid #aaa;
+			background: #eee;
+			color: #333;
+			padding: 10px;
+			border-radius: 4px;
+			width: 200px;
+		}
+	</style>
+ </head>
+ <body>
+  <h1>jQueryUI-Effects</h1>
+	<h3>新的动画特效</h3>
+	<button>显示/隐藏</button>
+	<div class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed tempora omnis ipsum ipsa cum facilis ut maxime officia perferendis ipsam qui nostrum veritatis, quia dolorem maiores enim beatae voluptatibus consequatur.</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+	<script>
+	var time=2000;
+	$("button").click(function(){
+		$(".box").toggle("explode",time);console.log("爆炸");
+		$(".box").toggle("blind",time);console.log("遮蔽");
+		$(".box").toggle("bounce",time);console.log("弹跳");
+		$(".box").toggle("clip",time);console.log("缩短");
+		$(".box").toggle("drop",time);console.log("丢弃");
+		$(".box").toggle("fold",time);console.log("折叠");
+		$(".box").toggle("highlight",time);console.log("高亮");
+		$(".box").toggle("puff",time);console.log("膨胀");
+		$(".box").toggle("pulsate",time);console.log("心跳");
+		$(".box").toggle("scale",time);console.log("缩放");
+		$(".box").toggle("shake",time);console.log("震动");
+	})
+	</script>
+ </body>
+</html>

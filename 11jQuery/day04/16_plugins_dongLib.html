@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>...</title>
+</head>
+
+<body>
+    <ul>
+        <li>81</li>
+        <li>56</li>
+        <li>89</li>
+    </ul>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="16_dongLib.js"></script>
+    <script>
+        //    $("ul>li").each(function(){
+        //      $(this).html($(this).html()-1)
+        //    });
+        //    $.each($("ul>li"),function(){
+        //      $(this).html($(this).html()-1)
+        //    });
+        console.log($("ul>li").sum());
+        console.log($.dong.sum($("ul>li")));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta charset="utf-8">
+	<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.css">
+	<style>
+	#my-progressbar{position: relative;}
+	#my-label{
+		position: absolute;
+		left: 48%;
+		top:20%
+		}
+	</style>
+ </head>
+ <body>
+  <h1>jQueryUI：Widgets —— Tooltip</h1>
+	<h3>工具提示组件</h3>
+	
+	<div id="my-progressbar">
+		<div id="my-label"></div>
+	</div>
+
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+	<script>
+		var $pb=$("#my-progressbar");
+		$pb.progressbar({
+			value:0,
+			change(){
+				$(this).children("#my-label").html(
+					$(this).progressbar("value")+"%"
+				)
+			},
+			complete(){
+				$(this).children("#my-label").html(
+					"completed!"
+				);
+			}
+		});
+		+function(){
+			var timer=setInterval(function(){
+				$pb.progressbar("value",
+					$pb.progressbar("value")+10)
+			},1000)
+		}();
+	</script>
+ </body>
+</html>
