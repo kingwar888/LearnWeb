@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>添加汽车</h1>
+    <form action="car_add.php">
+        汽车名称：<input type="text" name="cname"><br>
+        汽车图片：<input type="text" name="pic"><br>
+        汽车价格：<input type="text" name="price"><br>
+        是否特价：<input type="radio" name="isonsale" value="1">是<input type="radio" name="isonsale" value="0">否<br>
+        生产日期：<input type="text" name="birthday"><br>
+        <input type="submit">
+    </form>
+    <h1>删除汽车</h1>
+    <form action="car_delete.php">
+        输入要删除的汽车编号：<input name="cid">
+        <input type="submit">
+    </form>
+</body>
+</html>
